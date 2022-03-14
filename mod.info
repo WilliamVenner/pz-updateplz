@@ -1,0 +1,3 @@
+name=Update PLZ
+id=UpdatePlz
+description=Restart the (empty) dedicated server if mods are outdated
