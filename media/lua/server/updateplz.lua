@@ -45,7 +45,6 @@ end
 
 local function pollReboot()
 	if not workshopOutdated then return end
-	if not isServerEmpty() then return end
 
 	print("[UpdatePLZ] Restarting the server (server empty and outdated Workshop items were detected)")
 
@@ -55,6 +54,8 @@ end
 do
 	local nextPoll
 	Events.OnTickEvenPaused.Add(function()
+		if not isServerEmpty() then return end
+
 		if workshopOutdated then
 			return pollReboot()
 		end
@@ -68,5 +69,6 @@ do
 end
 
 Events.OnDisconnect.Add(pollReboot)
+Events.OnDisconnect.Add(pollWorkshop)
 
 print("[UpdatePLZ] Loaded!")
