@@ -54,7 +54,7 @@ local function countdown()
 	local time = getTimestamp()
 	local delta = restartingAt - time
 	if not nextChatPrint or nextChatPrint - time <= 0 then
-		nextChatPrint = time + math.min(60, math.max(delta - 5, 0))
+		nextChatPrint = time + math.min(delta / 2, 60 * 15)
 
 		if math.floor(delta / 60) <= 0 then
 			chat("WARNING: Server is restarting to update Workshop mods!")
