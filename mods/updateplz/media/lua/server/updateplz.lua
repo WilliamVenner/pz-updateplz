@@ -126,7 +126,7 @@ Events.OnTickEvenPaused.Add(function()
 
 	local timestamp = getTimestamp()
 	if not nextPoll or getTimestamp() >= nextPoll then
-		nextPoll = timestamp + 5
+		nextPoll = timestamp + 60
 		return pollWorkshop()
 	end
 end)
