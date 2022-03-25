@@ -1,0 +1,4 @@
+name=Update PLZ (5 minutes)
+id=UpdatePlz5
+description=Restart the dedicated server if mods are outdated after 5 minutes
+require=UpdatePlz
